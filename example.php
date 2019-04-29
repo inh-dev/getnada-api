@@ -52,3 +52,6 @@ foreach($box as $message) {
 if($getnada->hasNew($email)) {
     echo $email . ' has new messages';
 }
+
+$newRandomEmail = $getnada->randomEmail($domains);
+echo PHP_EOL . $newRandomEmail;

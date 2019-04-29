@@ -177,6 +177,8 @@ abstract class AbstractClient
 
     public function sendRequest(string $method, string $uri, array $options = [])
     {
-        return $response = $this->getClient()->request($method, $uri, $options);
+        $request = $this->getClient()->createRequest($method, $this->getBaseDomain() . $uri, $options);
+
+        return $this->getClient()->send($request);
     }
 }
